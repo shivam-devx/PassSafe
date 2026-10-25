@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PassSafe — Password Security Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header / Logo -->
+  <header>
+    <div class="logo">
+      <svg class="shield-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6L12 2z"
+          fill="#00e676" stroke="#00e676" stroke-width="0.5"/>
+        <path d="M9 12l2 2 4-4" stroke="#0d1b2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>PassSafe</span>
+    </div>
+    <p class="tagline">Password Security Lab</p>
+  </header>
+
+  <main>
+
+    <!-- Password Strength Checker Card -->
+    <section class="card" id="checker-card">
+      <h2>Password Strength Checker</h2>
+      <p class="card-desc">Get a basic estimate. Passwords are not checked against breach databases.</p>
+
+      <div class="input-row">
+        <input type="password" id="password-input" placeholder="Enter your password..." autocomplete="off" aria-label="Password to check" />
+        <button type="button" class="icon-btn" id="toggle-btn" title="Show password" aria-label="Show password" aria-pressed="false">👁</button>
+      </div>
+
+      <button class="btn primary" id="check-btn">Check Password</button>
+
+      <!-- Result area (hidden until checked) -->
+      <div id="result-area" class="hidden">
+        <div class="strength-bar-wrap">
+          <div class="strength-bar" id="strength-bar"></div>
+        </div>
+        <p id="strength-label" role="status" aria-live="polite"></p>
+        <ul id="suggestions"></ul>
+      </div>
+    </section>
+
+    <!-- Password Generator Card -->
+    <section class="card" id="generator-card">
+      <h2>Password Generator</h2>
+      <p class="card-desc">Generate a strong random password instantly.</p>
+
+      <button class="btn primary" id="generate-btn">Generate Password</button>
+
+      <!-- Generated password display (hidden until generated) -->
+      <div id="gen-result" class="hidden">
+        <div class="gen-output-row">
+          <span id="gen-password"></span>
+          <button type="button" class="icon-btn" id="copy-btn" title="Copy password" aria-label="Copy generated password">📋</button>
+        </div>
+        <p id="copy-msg" class="copy-msg hidden" role="status" aria-live="polite">Copied!</p>
+      </div>
+    </section>
+
+    <!-- Security Tips Card -->
+    <section class="card" id="tips-card">
+      <h2>Password Security Tips</h2>
+      <ul class="tips-list">
+        <li>
+          <span class="tip-icon">🔒</span>
+          <span>Use long passwords — at least 12 characters.</span>
+        </li>
+        <li>
+          <span class="tip-icon">🚫</span>
+          <span>Avoid common words, names, and predictable patterns like "123456".</span>
+        </li>
+        <li>
+          <span class="tip-icon">🔁</span>
+          <span>Never reuse the same password across different accounts.</span>
+        </li>
+        <li>
+          <span class="tip-icon">🗝</span>
+          <span>Use a password manager to store passwords safely.</span>
+        </li>
+        <li>
+          <span class="tip-icon">✅</span>
+          <span>Enable two-factor authentication (2FA) wherever possible.</span>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>PassSafe &mdash; Password Security Lab &nbsp;|&nbsp; Passwords are never saved or transmitted.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
